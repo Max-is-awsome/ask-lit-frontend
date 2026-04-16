@@ -19,6 +19,54 @@
             background-color: #f8f9fa;
         }
 
+        #maintenance-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.75);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #maintenance-box {
+            background: linear-gradient(135deg, #1a0000, #3d0000);
+            border: 3px solid #ff2222;
+            border-radius: 16px;
+            padding: 50px 60px;
+            text-align: center;
+            max-width: 520px;
+            width: 90%;
+            box-shadow: 0 0 40px rgba(255, 30, 30, 0.6), 0 0 80px rgba(255, 0, 0, 0.3);
+            animation: pulse-border 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse-border {
+            0%, 100% { box-shadow: 0 0 40px rgba(255, 30, 30, 0.6), 0 0 80px rgba(255, 0, 0, 0.3); }
+            50% { box-shadow: 0 0 60px rgba(255, 30, 30, 0.9), 0 0 120px rgba(255, 0, 0, 0.5); }
+        }
+
+        #maintenance-box .icon {
+            font-size: 3.5rem;
+            margin-bottom: 16px;
+        }
+
+        #maintenance-box h2 {
+            color: #ff3333;
+            font-size: 2rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+            text-shadow: 0 0 12px rgba(255, 50, 50, 0.8);
+        }
+
+        #maintenance-box p {
+            color: #ffaaaa;
+            font-size: 1.1rem;
+            margin: 0;
+        }
+
         .app-container {
             max-width: 900px;
             margin-top: 80px;
@@ -36,6 +84,14 @@
 </head>
 
 <body>
+
+<div id="maintenance-overlay">
+    <div id="maintenance-box">
+        <div class="icon">🔧</div>
+        <h2>Under Maintenance</h2>
+        <p>We're currently down for maintenance and will be back shortly. Thanks for your patience!</p>
+    </div>
+</div>
 
 <div class="container app-container">
     <div class="text-center mb-5">
